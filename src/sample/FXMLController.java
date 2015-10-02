@@ -40,6 +40,7 @@ public class FXMLController implements Initializable, MapComponentInitializedLis
 
         mapOptions.center(new LatLong(19.371761, -99.263299))
                 .mapType(MapTypeIdEnum.HYBRID)
+                .mapTypeControl(false)
                 .overviewMapControl(true)
                 .panControl(true)
                 .rotateControl(true)
