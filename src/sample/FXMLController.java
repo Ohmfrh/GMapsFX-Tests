@@ -3,7 +3,7 @@ package sample;
 import com.lynden.gmapsfx.GoogleMapView;
 import com.lynden.gmapsfx.MapComponentInitializedListener;
 import com.lynden.gmapsfx.javascript.object.*;
-//import com.lynden.gmapsfx.javascript.object.MapType;
+import com.lynden.gmapsfx.javascript.object.MapTypeIdEnum;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -38,15 +38,15 @@ public class FXMLController implements Initializable, MapComponentInitializedLis
         //Set the initial properties of the map.
         MapOptions mapOptions = new MapOptions();
 
-        mapOptions.center(new LatLong(47.6097, -122.3331))
-                //.mapType(MapType.ROADMAP)
-                .overviewMapControl(false)
-                .panControl(false)
-                .rotateControl(false)
-                .scaleControl(false)
-                .streetViewControl(false)
-                .zoomControl(false)
-                .zoom(12);
+        mapOptions.center(new LatLong(19.371761, -99.263299))
+                .mapType(MapTypeIdEnum.HYBRID)
+                .overviewMapControl(true)
+                .panControl(true)
+                .rotateControl(true)
+                .scaleControl(true)
+                .streetViewControl(true)
+                .zoomControl(true)
+                .zoom(20);
 
         map = mapView.createMap(mapOptions);
 
@@ -72,7 +72,7 @@ public class FXMLController implements Initializable, MapComponentInitializedLis
         Marker tomChoiceMarker= new Marker(markerOptions4);
         Marker fredWilkieMarker = new Marker(markerOptions5);
 
-        map.addMarker( joeSmithMarker );
+        /*map.addMarker( joeSmithMarker );
         map.addMarker( joshAndersonMarker );
         map.addMarker( bobUnderwoodMarker );
         map.addMarker( tomChoiceMarker );
@@ -84,6 +84,6 @@ public class FXMLController implements Initializable, MapComponentInitializedLis
                 + "ETA: 45 minutes" );
 
         InfoWindow fredWilkeInfoWindow = new InfoWindow(infoWindowOptions);
-        fredWilkeInfoWindow.open(map, fredWilkieMarker);
+        fredWilkeInfoWindow.open(map, fredWilkieMarker);*/
     }
 }
