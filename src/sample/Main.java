@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("GMaps.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Google Maps");
         primaryStage.setScene(new Scene(root, 1000, 700));
         primaryStage.show();
     }
