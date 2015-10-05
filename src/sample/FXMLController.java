@@ -46,12 +46,12 @@ public class FXMLController implements Initializable, MapComponentInitializedLis
         mapOptions.center(new LatLong(19.371761, -99.263299))
                 .mapType(MapTypeIdEnum.TERRAIN)
                 .mapTypeControl(false)
-                .overviewMapControl(true)
-                .panControl(true)
-                .rotateControl(true)
-                .scaleControl(true)
-                .streetViewControl(true)
-                .zoomControl(true)
+                .overviewMapControl(false)
+                .panControl(false)
+                .rotateControl(false)
+                .scaleControl(false)
+                .streetViewControl(false)
+                .zoomControl(false)
                 .zoom(20);
 
         map = mapView.createMap(mapOptions);
