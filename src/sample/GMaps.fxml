@@ -15,13 +15,13 @@
         <GoogleMapView fx:id="mapView" prefHeight="750.0" prefWidth="761.0" AnchorPane.bottomAnchor="-185.0"
                        AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-441.0" AnchorPane.topAnchor="0.0"/>
         <VBox alignment="TOP_CENTER" fillWidth="false" layoutX="26.0" layoutY="29.0" prefHeight="478.0"
-              prefWidth="221.0" spacing="1.0" styleClass="panel-background" stylesheets="/styles/vMenu.css"
+              prefWidth="221.0" spacing="5.0" styleClass="panel-background" stylesheets="/styles/vMenu.css"
               AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="88.0"
               BorderPane.alignment="CENTER">
-            <Button text="Hybrid" onAction="#Hybrid" minWidth="100"/>
-            <Button text="Satelite" onAction="#Satelite" minWidth="100"/>
-            <Button text="Road" onAction="#Road" minWidth="100"/>
-            <Button text="Terrain" onAction="#Terrain" minWidth="100"/>
+            <Button text="Hybrid" onAction="#Hybrid" styleClass="buttonWidth"/>
+            <Button text="Satelite" onAction="#Satelite" styleClass="buttonWidth"/>
+            <Button text="Road" onAction="#Road" styleClass="buttonWidth"/>
+            <Button text="Terrain" onAction="#Terrain" styleClass="buttonWidth"/>
         </VBox>
     </children>
 </AnchorPane>

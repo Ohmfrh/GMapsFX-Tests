@@ -1,3 +1,8 @@
 .panel-background {
     -fx-border-color: aqua;
 }
+
+.buttonWidth {
+    -fx-min-width: 100px;
+    -fx-background-color: rgba(248, 248, 248, 0.3);
+}
