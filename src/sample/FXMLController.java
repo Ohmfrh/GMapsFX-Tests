@@ -58,23 +58,7 @@ public class FXMLController implements Initializable, MapComponentInitializedLis
                 .streetViewControl(false)
                 .zoomControl(false)
                 .zoom(20);
-
-        map = mapView.createMap(mapOptions);
-
-        LatLong markerLatLong = new LatLong(47.606189, -122.335842);
-        LatLong markerLatLong2 = new LatLong(47.906189, -122.335842);
-
-        LatLong[] ary = new LatLong[]{markerLatLong, markerLatLong2};
-        MVCArray mvc = new MVCArray(ary);
-
-        com.lynden.gmapsfx.shapes.PolylineOptions polyOpts = new com.lynden.gmapsfx.shapes.PolylineOptions()
-                .path(mvc)
-                .strokeColor("red")
-                .strokeWeight(2);
-
-        com.lynden.gmapsfx.shapes.Polyline poly = new com.lynden.gmapsfx.shapes.Polyline(polyOpts);
-        map.addMapShape(poly);
-
+        
         LatLong poly1 = new LatLong(19.371761, -99.263299);
         LatLong poly2 = new LatLong(19.371761, -99.3);
         LatLong poly3 = new LatLong(19.4, -99.3);
@@ -96,14 +80,6 @@ public class FXMLController implements Initializable, MapComponentInitializedLis
             pg.setEditable(!pg.getEditable());
         });
 
-        LatLong centreC = new LatLong(47.545481, -121.87384);
-        CircleOptions cOpts = new CircleOptions()
-                .center(centreC)
-                .radius(5000)
-                .strokeColor("green")
-                .strokeWeight(2)
-                .fillColor("orange")
-                .fillOpacity(0.3);
 
         map.addUIEventHandler(UIEventType.click, (JSObject obj) -> {
             LatLong ll = new LatLong((JSObject) obj.getMember("latLng"));
