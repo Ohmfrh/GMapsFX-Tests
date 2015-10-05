@@ -12,12 +12,12 @@
 <AnchorPane id="AnchorPane" fx:controller="sample.FXMLController" prefHeight="616.0" prefWidth="737.0"
             xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <GoogleMapView fx:id="mapView" prefHeight="750.0" prefWidth="761.0" AnchorPane.bottomAnchor="-185.0"
-                       AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-441.0" AnchorPane.topAnchor="0.0"/>
-        <VBox alignment="CENTER_LEFT" fillWidth="false" layoutX="1.0" layoutY="1.0" prefHeight="300.0"
+        <GoogleMapView fx:id="mapView" prefHeight="750.0" prefWidth="761.0" AnchorPane.bottomAnchor="-100.0"
+                       AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-0.0" AnchorPane.topAnchor="0.0"/>
+        <VBox alignment="TOP_LEFT" fillWidth="false" layoutX="1.0" layoutY="1.0" prefHeight="300.0"
               prefWidth="100.0" spacing="5.0" styleClass="panel-background" stylesheets="/styles/vMenu.css"
-              AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.topAnchor="1.0"
-              AnchorPane.rightAnchor="1.0" BorderPane.alignment="CENTER">
+              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0"
+              BorderPane.alignment="CENTER">
             <Button text="Hybrid" onAction="#Hybrid" styleClass="buttonWidth"/>
             <Button text="Satelite" onAction="#Satelite" styleClass="buttonWidth"/>
             <Button text="Road" onAction="#Road" styleClass="buttonWidth"/>
