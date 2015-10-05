@@ -85,9 +85,10 @@ public class FXMLController implements Initializable, MapComponentInitializedLis
                 .paths(pmvc)
                 .strokeColor("blue")
                 .strokeWeight(2)
-                .editable(true)
+                .editable(false)
                 .fillColor("lightBlue")
-                .fillOpacity(0.5);
+                .fillOpacity(0.5)
+                .draggable(false).clickable(false).visible(true);
 
         Polygon pg = new Polygon(polygOpts);
         map.addMapShape(pg);
