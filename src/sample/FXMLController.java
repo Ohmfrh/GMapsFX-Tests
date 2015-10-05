@@ -6,13 +6,17 @@ import com.lynden.gmapsfx.javascript.object.*;
 import com.lynden.gmapsfx.javascript.object.MapTypeIdEnum;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 
 public class FXMLController implements Initializable, MapComponentInitializedListener {
 
+    public Label bTest;
     @FXML
     private Button button;
 
@@ -21,6 +25,8 @@ public class FXMLController implements Initializable, MapComponentInitializedLis
 
     private GoogleMap map;
 
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         mapView.addMapInializedListener(this);
@@ -28,18 +34,17 @@ public class FXMLController implements Initializable, MapComponentInitializedLis
 
     @Override
     public void mapInitialized() {
-        LatLong joeSmithLocation = new LatLong(47.6197, -122.3231);
+        /*LatLong joeSmithLocation = new LatLong(47.6197, -122.3231);
         LatLong joshAndersonLocation = new LatLong(47.6297, -122.3431);
         LatLong bobUnderwoodLocation = new LatLong(47.6397, -122.3031);
         LatLong tomChoiceLocation = new LatLong(47.6497, -122.3325);
         LatLong fredWilkieLocation = new LatLong(47.6597, -122.3357);
-
+*/
 
         //Set the initial properties of the map.
         MapOptions mapOptions = new MapOptions();
-
         mapOptions.center(new LatLong(19.371761, -99.263299))
-                .mapType(MapTypeIdEnum.HYBRID)
+                .mapType(MapTypeIdEnum.TERRAIN)
                 .mapTypeControl(false)
                 .overviewMapControl(true)
                 .panControl(true)
@@ -51,7 +56,7 @@ public class FXMLController implements Initializable, MapComponentInitializedLis
 
         map = mapView.createMap(mapOptions);
 
-        //Add markers to the map
+        /*//Add markers to the map
         MarkerOptions markerOptions1 = new MarkerOptions();
         markerOptions1.position(joeSmithLocation);
 
@@ -86,5 +91,21 @@ public class FXMLController implements Initializable, MapComponentInitializedLis
 
         InfoWindow fredWilkeInfoWindow = new InfoWindow(infoWindowOptions);
         fredWilkeInfoWindow.open(map, fredWilkieMarker);*/
+    }
+
+    public void Satelite(ActionEvent actionEvent) {
+        map.setMapType(MapTypeIdEnum.SATELLITE);
+    }
+
+    public void Hybrid(ActionEvent actionEvent) {
+        map.setMapType(MapTypeIdEnum.HYBRID);
+    }
+
+    public void Road(ActionEvent actionEvent) {
+        map.setMapType(MapTypeIdEnum.ROADMAP);
+    }
+
+    public void Terrain(ActionEvent actionEvent) {
+        map.setMapType(MapTypeIdEnum.TERRAIN);
     }
 }

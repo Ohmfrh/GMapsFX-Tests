@@ -18,6 +18,10 @@
               prefWidth="221.0" spacing="10.0" styleClass="panel-background" stylesheets="/styles/Styles.css"
               AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="88.0"
               BorderPane.alignment="CENTER">
+            <Button text="Hybrid" onAction="#Hybrid"/>
+            <Button text="Satelite" onAction="#Satelite"/>
+            <Button text="Road" onAction="#Road"/>
+            <Button text="Terrain" onAction="#Terrain"/>
         </VBox>
     </children>
 </AnchorPane>
