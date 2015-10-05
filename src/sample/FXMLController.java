@@ -85,16 +85,27 @@ public class FXMLController implements Initializable, MapComponentInitializedLis
                 .paths(pmvc)
                 .strokeColor("blue")
                 .strokeWeight(2)
-                .editable(false)
+                .editable(true)
                 .fillColor("lightBlue")
                 .fillOpacity(0.5)
-                .draggable(false).clickable(false).visible(true);
+                .draggable(true).clickable(true).visible(true);
 
         Polygon pg = new Polygon(polygOpts);
         map.addMapShape(pg);
         map.addUIEventHandler(pg, UIEventType.click, (JSObject obj) -> {
-            //polygOpts.editable(true);
+            polygOpts.editable(true);
             pg.setEditable(!pg.getEditable());
+            boolean a = pg.getEditable();
+            LatLongBounds ll = pg.getBounds();
+
+            //LatLong lal;
+            //lal = ll.getNorthEast();
+
+
+            //System.out.println(s);
+
+            System.out.println("HOLA" + a + "|");
+
         });
 
 
