@@ -2,16 +2,21 @@ package sample;
 
 import com.lynden.gmapsfx.GoogleMapView;
 import com.lynden.gmapsfx.MapComponentInitializedListener;
+import com.lynden.gmapsfx.javascript.event.UIEventType;
 import com.lynden.gmapsfx.javascript.object.*;
 import com.lynden.gmapsfx.javascript.object.MapTypeIdEnum;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.lynden.gmapsfx.javascript.object.Polyline;
+import com.lynden.gmapsfx.javascript.object.PolylineOptions;
+import com.lynden.gmapsfx.shapes.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import netscape.javascript.JSObject;
 
 
 public class FXMLController implements Initializable, MapComponentInitializedListener {
@@ -55,6 +60,55 @@ public class FXMLController implements Initializable, MapComponentInitializedLis
                 .zoom(20);
 
         map = mapView.createMap(mapOptions);
+
+        LatLong markerLatLong = new LatLong(47.606189, -122.335842);
+        LatLong markerLatLong2 = new LatLong(47.906189, -122.335842);
+
+        LatLong[] ary = new LatLong[]{markerLatLong, markerLatLong2};
+        MVCArray mvc = new MVCArray(ary);
+
+        com.lynden.gmapsfx.shapes.PolylineOptions polyOpts = new com.lynden.gmapsfx.shapes.PolylineOptions()
+                .path(mvc)
+                .strokeColor("red")
+                .strokeWeight(2);
+
+        com.lynden.gmapsfx.shapes.Polyline poly = new com.lynden.gmapsfx.shapes.Polyline(polyOpts);
+        map.addMapShape(poly);
+
+        LatLong poly1 = new LatLong(19.371761, -99.263299);
+        LatLong poly2 = new LatLong(19.371761, -99.3);
+        LatLong poly3 = new LatLong(19.4, -99.3);
+        LatLong[] pAry = new LatLong[]{poly1, poly2, poly3};
+        MVCArray pmvc = new MVCArray(pAry);
+
+        PolygonOptions polygOpts = new PolygonOptions()
+                .paths(pmvc)
+                .strokeColor("blue")
+                .strokeWeight(2)
+                .editable(false)
+                .fillColor("lightBlue")
+                .fillOpacity(0.5);
+
+        Polygon pg = new Polygon(polygOpts);
+        map.addMapShape(pg);
+        map.addUIEventHandler(pg, UIEventType.click, (JSObject obj) -> {
+            //polygOpts.editable(true);
+            pg.setEditable(!pg.getEditable());
+        });
+
+        LatLong centreC = new LatLong(47.545481, -121.87384);
+        CircleOptions cOpts = new CircleOptions()
+                .center(centreC)
+                .radius(5000)
+                .strokeColor("green")
+                .strokeWeight(2)
+                .fillColor("orange")
+                .fillOpacity(0.3);
+
+        map.addUIEventHandler(UIEventType.click, (JSObject obj) -> {
+            LatLong ll = new LatLong((JSObject) obj.getMember("latLng"));
+            System.out.println("LatLong: lat: " + ll.getLatitude() + " lng: " + ll.getLongitude());
+        });
 
         /*//Add markers to the map
         MarkerOptions markerOptions1 = new MarkerOptions();
